@@ -2,6 +2,8 @@
 
 This repository contains a tutorial on how to install and set up ROS2, start your first ROS2 node, create and set up a ROS2 workspace, create a ROS2 python package, create a ROS2 node with python and OOP, write a ROS2 closed loop with publisher and subscriber, what is ROS2 Topic, what is ROS2 Publisher and subscriber, and how to write a ROS2 Service client with python.
 
+![Final output](/images/turtle.png?raw=true)
+
 ## Table of Contents
 
 - [Installation](#installation)
