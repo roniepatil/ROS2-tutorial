@@ -54,57 +54,93 @@ To write a ROS 2 service client with python
 ## EXTRA - Useful commands
 
 export PATH="/usr/local/cuda-11.8/bin:$PATH"
+
 export LD_LIBRARY_PATH="/usr/local/cuda-11.8/lib64:$LD_LIBRARY_PATH"
+
 export PATH="/home/rohit/.local/bin:$PATH"
+
 source /opt/ros/humble/setup.bash
+
 source /usr/share/colcon_argcomplete/hook/colcon-argcomplete.bash
+
 source ~/ros2_ws/install/setup.bash
 
 mkdir ros2_wc
+
 cd ros2_wc
+
 mkdir src
+
 colcon_build
+
 source install/setup.bash
+
 cd src
+
 ros2 pkg create my_robot_controller --build-type ament_python --dependencies rclpy
+
 cd ..
+
 colcon build
+
 [note: Current version installed - setuptools  59.6.0]
+
 pip3 install setuptools==58.2.0
+
 cd ~/ros2_ws/src/my_robot_controller/my_robot_controller 
+
 touch my_first_node.py
+
 chmod +x my_first_node.py
+
 ./my_first_node.py
 
 #Below will prevent you to build every-time you change something in py files.
+
 colcon build --symlink-install 
 
 ros2 run my_robot_controller test_node
 
 ros2 node list
+
 ros2 node info /first_node
+
 rqt_graph
 
 ros2 topic list
+
 ros2 topic info /chatter
+
 ros2 interface show std_msgs/msg/String
+
 ros2 topic echo /chatter
 
 ros2 run turtlesim  turtlesim_node
+
 ros2 run turtlesim turtle_teleop_key
 
 ros2 run demo_nodes_cpp add_two_ints_server
+
 ros2 service list
+
 ros2 node list
+
 ros2 service type /add_two_ints
+
 ros2 interface show example_interfaces/srv/AddTwoInts
+
 ros2 service call /add_two_ints example_interfaces/srv/AddTwoInts “{‘a’:2, ‘b’:5}”
 
 ros2 run turtlesim turtlesim_node
+
 ros2 run turtlesim turtle_teleop_key
+
 ros2 service list
+
 ros2 service type /turtle1/set_pen
+
 ros2 interface show turtlesim/srv/SetPen
+
 ros2 service call /turtle1/set_pen turtlesim/srv/SetPen “{‘r’:255, ‘g’:0, ‘b’:0, ‘width’:3, ‘off’: 0}”
 
 ros2 topic hz /turtle1/pose
